@@ -1,0 +1,17 @@
+body {
+  background-color: $coolGray;
+	color: $light;
+
+  a {
+    color: $light;
+  }
+}
+
+body.theme-light {
+  background-color: $orange; //$light;
+  color: $coolGray;
+
+  a {
+    color: $coolGray;
+  }
+}

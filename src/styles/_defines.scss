@@ -1,0 +1,67 @@
+.h1 {
+  font-size: 3rem;
+}
+.h2 {
+  font-size: 2.5rem;
+}
+.h3 {
+  font-size: 2rem;
+}
+.h4 {
+  font-size: 1.5rem;
+}
+.h5 {
+  font-size: 1.25rem;
+}
+.h6 {
+  font-size: 1rem;
+}
+
+// color
+.amber {
+  color: $amber;
+}
+
+.light {
+  color: $light;
+}
+
+.coolGray {
+  color: $coolGray;
+}
+
+// color
+.bg-amber {
+  background-color: $amber;
+}
+
+.bg-light {
+  background-color: $light;
+}
+
+.bg-coolGray {
+  background-color: $coolGray;
+}
+
+// margin 
+.mb-1rem {
+  margin-bottom: 1rem;
+}
+
+.mb-1\.5rem {
+  margin-bottom: 1.5rem;
+}
+
+.mb-2rem {
+  margin-bottom: 2rem;
+}
+
+.mb-5rem {
+  margin-bottom: 5rem;
+}
+
+.mt-1rem {
+  margin-top: 1rem;
+}
+
+@import "./animation";
