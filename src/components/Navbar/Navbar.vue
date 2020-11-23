@@ -6,7 +6,7 @@
     </a>
 
     <div class="info">
-      <a class="alink" href="#">About me〴</a>
+      <router-link class="alink" to="/about">About me〴</router-link>
       <a class="alink resume" href="#">Resume ⋰</a>
     </div>
   </div>
