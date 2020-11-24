@@ -22,8 +22,8 @@
           </h3>
         </div>
 
-        <h4>
-          <a href="#">Available for freelance work ↪</a>
+        <h4 class="amn">
+          <a class="amn-text" href="#">Available for freelance work ↪</a>
         </h4>
       </div>
 
@@ -218,8 +218,9 @@ export default {
       font-size: 2.5rem;
       font-weight: 900;
     }
+    
     .amn {
-      $items: 4;
+      $items: 5;
       @for $i from 1 through $items {
         &:nth-child(#{$i}) {
           .amn-text {
@@ -236,6 +237,10 @@ export default {
       display: inline-block;
       width: 300px;
       height: 300px;
+      opacity: 0;
+      animation: AmnBtt 600ms ease forwards;
+      animation-delay: 1.4s;
+
       .avatar {
         width: 100%;
         height: 100%;
@@ -243,6 +248,7 @@ export default {
         object-fit: cover;
         object-position: center;
       }
+      
       .online-point {
         width: 50px;
         height: 50px;

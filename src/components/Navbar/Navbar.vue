@@ -1,9 +1,9 @@
 <template>
   <div class="navbar">
-    <a class="brand">
+    <router-link to="/" class="brand">
       <span class="say">I am</span>
       <span class="im"> duongductrong06 💻 </span>
-    </a>
+    </router-link>
 
     <div class="info">
       <a
@@ -18,14 +18,28 @@
 </template>
 
 <script>
+import { SET_PRELOADER } from "../../core/vuex/modules/preloader.module";
+
+import { useStore } from "vuex";
 export default {
+  setup() {
+    const store = useStore();
+
+    return {
+      preloaderStoreFunc: (v = false) => store.dispatch(SET_PRELOADER, v),
+    };
+  },
+
   name: "Navbar",
 
   methods: {
     pushHistory(path) {
+      this.preloaderStoreFunc(true);
+
       setTimeout(() => {
         this.$router.push(path);
-      }, 200);
+        this.preloaderStoreFunc(false);
+      }, 4000);
     },
   },
 };
@@ -40,6 +54,8 @@ export default {
   padding: 1rem 0;
 
   .brand {
+    text-decoration: none;
+
     span.say {
       font-weight: 500;
       font-size: 1.125rem;
