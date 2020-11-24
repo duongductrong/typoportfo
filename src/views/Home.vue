@@ -171,7 +171,30 @@ export default {
     );
   },
   beforeUnmount() {
-    console.log("unmount");
+    let arrayList = [
+      this.$refs.expertise,
+      this.$refs.language,
+      this.$refs.framework,
+      this.$refs.database,
+      this.$refs.expertiseDescription,
+      this.$refs.timelineOne.focus(),
+      this.$refs.timelineTwo.focus(),
+    ];
+    
+    document.removeEventListener(
+      "scroll",
+      throttle(() => {
+        arrayList.forEach((refEl) => {
+          if (refEl.offsetTop < window.scrollY + window.innerHeight) {
+            refEl.classList.add("amn-opacity-transformY100");
+          } else {
+            if (refEl.classList.contains("amn-opacity-transformY100")) {
+              refEl.classList.remove("amn-opacity-transformY100");
+            }
+          }
+        });
+      }, 20)
+    )
   },
 };
 </script>

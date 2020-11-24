@@ -6,7 +6,12 @@
     </a>
 
     <div class="info">
-      <router-link class="alink" to="/about">About me〴</router-link>
+      <a
+        class="alink"
+        href="javascript:void(0)"
+        v-on:click="pushHistory('/about')"
+        >About me〴</a
+      >
       <a class="alink resume" href="#">Resume ⋰</a>
     </div>
   </div>
@@ -15,6 +20,14 @@
 <script>
 export default {
   name: "Navbar",
+
+  methods: {
+    pushHistory(path) {
+      setTimeout(() => {
+        this.$router.push(path);
+      }, 200);
+    },
+  },
 };
 </script>
 
