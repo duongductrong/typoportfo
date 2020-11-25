@@ -1,51 +1,20 @@
 <template>
   <div class="navbar">
-    <a v-on:click="pushHistory('/')" class="brand">
+    <router-link href="javascript:void(0)" to="/" class="brand">
       <span class="say">I am</span>
       <span class="im"> duongductrong06 💻 </span>
-    </a>
+    </router-link>
 
     <div class="info">
-      <a
-        class="alink"
-        href="javascript:void(0)"
-        v-on:click="pushHistory('/about')"
-        >About me〴</a
-      >
+      <router-link class="alink" href="javascript:void(0)" to="/about">About me〴</router-link>
       <a class="alink resume" href="#">Resume ⋰</a>
     </div>
   </div>
 </template>
 
 <script>
-import { SET_PRELOADER } from "../../core/vuex/modules/preloader.module";
-
-import { useStore } from "vuex";
 export default {
-  setup() {
-    const store = useStore();
-
-    return {
-      preloaderStoreFunc: (v = false) => store.dispatch(SET_PRELOADER, v),
-    };
-  },
-
   name: "Navbar",
-
-  methods: {
-    pushHistory(path) {
-      // turn on preloader
-      this.preloaderStoreFunc(true);
-
-      setTimeout(() => {
-        // navigate to path
-        this.$router.push(path);
-
-        // turn of preloader
-        this.preloaderStoreFunc(false);
-      }, 3000);
-    },
-  },
 };
 </script>
 
@@ -112,5 +81,4 @@ export default {
     }
   }
 }
-
 </style>

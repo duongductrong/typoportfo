@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { SET_PRELOADER } from "../core/vuex/modules/preloader.module";
+import store from "../core/vuex/store";
 import Home from "../views/Home.vue";
 
 const routes = [
@@ -24,7 +26,14 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  return next();
+  // preloader open
+  store.dispatch(SET_PRELOADER, true);
+
+  setTimeout(() => {
+    // preloader close and next 
+    store.dispatch(SET_PRELOADER, false);
+    return next();
+  }, 1000);
 });
 
 export default router;

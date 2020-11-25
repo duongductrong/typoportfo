@@ -53,8 +53,9 @@ export default {
   }
 
   &::after {
-    content: "Waitingg...";
+    content: "Stay here.";
     white-space: nowrap;
+    font-weight: bold;
     visibility: hidden;
     position: absolute;
     top: 50%;
