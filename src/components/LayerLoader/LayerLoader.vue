@@ -92,7 +92,7 @@ export default {
     background: $coolGray;
 
     &::before {
-      background: $light;
+      background: $orange;
     }
 
     &::after {
