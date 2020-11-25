@@ -1,7 +1,12 @@
 <template>
   <div class="tree-item">
     <h6 class="h6 mb-1rem date">{{ date ?? "" }}</h6>
-    <h1 class="h4 mb-1rem title">{{ title ?? "" }}</h1>
+    <template v-if="href !== null">
+      <a class="item-link" :href="href" target="_blank"><h1 class="h4 mb-1rem title">{{ title ?? "" }}</h1></a>
+    </template>
+    <template v-else>
+      <h1 class="h4 mb-1rem title">{{ title ?? "" }}</h1>
+    </template>
     <p class="h6 paragraph">
       <slot></slot>
     </p>
@@ -15,6 +20,10 @@ export default {
   props: {
     date: String,
     title: String,
+    href: {
+      type: String,
+      default: null
+    }
   },
 };
 </script>
@@ -32,6 +41,14 @@ export default {
   }
   .title {
     font-weight: bold;
+  }
+
+  .item-link {
+    text-decoration: dashed;
+    text-decoration-color: $light;
+
+    &:hover {
+    }
   }
 
   .paragraph {
