@@ -49,7 +49,7 @@ export default {
   }
 }
 
-body.theme-light {
+.theme-light {
   .paragraph {
     color: rgba($color: $coolGray, $alpha: 0.8);
   }

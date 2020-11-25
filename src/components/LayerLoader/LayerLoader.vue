@@ -1,5 +1,10 @@
 <template>
-  <div class="layer-loader" :class="{'active' : preloaderModule.preloader, 'hidden' : !preloaderModule.preloader}"></div>
+  <div
+    class="layer-loader"
+    :class="{
+      active: preloader,
+    }"
+  ></div>
 </template>
 
 <script>
@@ -10,7 +15,7 @@ export default {
     const store = useStore();
 
     return {
-      preloaderModule: computed(() => store.state.preloaderModule),
+      preloader: computed(() => store.state.preloaderModule.preloader),
     };
   },
   name: "LayerLoader",
@@ -18,41 +23,79 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+// We have 1.5 second to loading and 1.5 second to hide
+// Inside loading we can custom before, after transition between 3 second
 .layer-loader {
+  visibility: hidden;
+  opacity: 1;
   background: $amber;
   position: fixed;
   top: 0;
-  left: -100%;
+  left: 0;
   width: 100%;
   height: 100vh;
-  transition: all 2s ease;
+  transition: all 1.5s ease;
+  overflow: hidden;
 
-  &::after {
+  clip-path: circle(0% at 50% 50%);
+
+  &::before {
     content: "";
-    position: fixed;
-    top: 100%;
+    position: absolute;
+    top: -100%;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background: $coolGray;
 
-    transition: all 2s ease;
-    transition-delay: 2s;
+    transition: all 1.5s ease;
+    transition-delay: 0.5s;
+  }
+
+  &::after {
+    content: "Waitingg...";
+    white-space: nowrap;
+    visibility: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0rem;
+    color: $amber;
+
+    text-transform: uppercase;
+    transform-origin: center;
+    transition: all 500ms linear;
+    transition-delay: 0.5s;
   }
 
   &.active {
     visibility: visible;
+    width: 100%;
+    clip-path: circle(100% at 50% 50%);
     opacity: 1;
-    left: 0;
 
-    &::after {
+    &::before {
       top: 0;
     }
-  }
 
-  &.hidden {
-    visibility: hidden;
-    opacity: 0;
+    &::after {
+      visibility: visible;
+      font-size: 2.5rem;
+    }
+  }
+}
+
+.theme-light {
+  .layer-loader {
+    background: $coolGray;
+
+    &::before {
+      background: $light;
+    }
+
+    &::after {
+    }
   }
 }
 </style>

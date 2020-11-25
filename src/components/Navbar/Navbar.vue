@@ -1,9 +1,9 @@
 <template>
   <div class="navbar">
-    <router-link to="/" class="brand">
+    <a v-on:click="pushHistory('/')" class="brand">
       <span class="say">I am</span>
       <span class="im"> duongductrong06 💻 </span>
-    </router-link>
+    </a>
 
     <div class="info">
       <a
@@ -34,12 +34,16 @@ export default {
 
   methods: {
     pushHistory(path) {
+      // turn on preloader
       this.preloaderStoreFunc(true);
 
       setTimeout(() => {
+        // navigate to path
         this.$router.push(path);
+
+        // turn of preloader
         this.preloaderStoreFunc(false);
-      }, 4000);
+      }, 3000);
     },
   },
 };
@@ -109,19 +113,4 @@ export default {
   }
 }
 
-// @keyframes filled {
-//   from {
-//     bottom: -5px;
-//     left: 0;
-//     width: 0%;
-//     height: 3px;
-//   }
-//   to {
-//     bottom: 100%;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: $amber;
-//   }
-// }
 </style>

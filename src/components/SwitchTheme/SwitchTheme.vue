@@ -4,11 +4,9 @@
 
 <script>
 export default {
-  name: "About",
+  name: "SwitchTheme",
 };
 </script>
 
 <style lang="scss" scoped>
-.about {
-}
 </style>

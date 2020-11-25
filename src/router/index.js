@@ -24,9 +24,7 @@ const router = createRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // setTimeout(() => {
-    return next();
-  // }, 500);
+  return next();
 });
 
 export default router;
