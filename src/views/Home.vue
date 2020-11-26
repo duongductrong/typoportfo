@@ -23,7 +23,7 @@
         </div>
 
         <h4 class="amn">
-          <a class="amn-text" href="#">Available for freelance work ↪</a>
+          <router-link class="amn-text" to="/about">Available for freelance work ↪</router-link>
         </h4>
       </div>
 

@@ -6,8 +6,8 @@
     </router-link>
 
     <div class="info">
-      <router-link class="alink" href="javascript:void(0)" to="/about">About me〴</router-link>
-      <a class="alink resume" href="#">Resume ⋰</a>
+      <router-link class="alink" href="javascript:void(0)" to="/about">Self〴</router-link>
+      <!-- <a class="alink resume" href="#">Resume ⋰</a> -->
     </div>
   </div>
 </template>
