@@ -42,4 +42,8 @@ router.beforeEach((to, from, next) => {
   }, 1000);
 });
 
+router.afterEach(() => {
+    document.title = "⚔️ Dương Đức Trọng - Portfolio Simple";
+})
+
 export default router;
