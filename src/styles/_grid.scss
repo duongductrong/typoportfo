@@ -1,72 +1,78 @@
 $cols: 12;
 
 .container {
-    width: 1140px;
-    margin: 0 auto;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    padding: 0 1rem;
+  }
 }
 
 .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: -7.5px;
-    margin-right: -7.5px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -7.5px;
+  margin-right: -7.5px;
 }
 
 .col {
-    width: auto;
-    max-width: auto;
-    flex: 0 0 auto;
+  width: auto;
+  max-width: auto;
+  flex: 0 0 auto;
 }
 
 @for $i from 1 through $cols {
-    .col-#{$i} {
-        width: 8.3333% * $i;
-        max-width: 8.3333% * $i;
-        padding-left: 7.5px;
-        padding-right: 7.5px;
-    }
+  .col-#{$i} {
+    width: 8.3333% * $i;
+    max-width: 8.3333% * $i;
+    padding-left: 7.5px;
+    padding-right: 7.5px;
+  }
 }
 
 @media screen and (min-width: 425px) {
-    @for $i from 1 through $cols {
-        .col-ml-#{$i} {
-            width: 8.3333% * $i;
-            max-width: 8.3333% * $i;
-            padding-left: 7.5px;
-            padding-right: 7.5px;
-        }
+  @for $i from 1 through $cols {
+    .col-ml-#{$i} {
+      width: 8.3333% * $i;
+      max-width: 8.3333% * $i;
+      padding-left: 7.5px;
+      padding-right: 7.5px;
     }
+  }
 }
 
 @media screen and (min-width: 768px) {
-    @for $i from 1 through $cols {
-        .col-tl-#{$i} {
-            width: 8.3333% * $i;
-            max-width: 8.3333% * $i;
-            padding-left: 7.5px;
-            padding-right: 7.5px;
-        }
+  @for $i from 1 through $cols {
+    .col-tl-#{$i} {
+      width: 8.3333% * $i;
+      max-width: 8.3333% * $i;
+      padding-left: 7.5px;
+      padding-right: 7.5px;
     }
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    @for $i from 1 through $cols {
-        .col-ln-#{$i} {
-            width: 8.3333% * $i;
-            max-width: 8.3333% * $i;
-            padding-left: 7.5px;
-            padding-right: 7.5px;
-        }
+  @for $i from 1 through $cols {
+    .col-ln-#{$i} {
+      width: 8.3333% * $i;
+      max-width: 8.3333% * $i;
+      padding-left: 7.5px;
+      padding-right: 7.5px;
     }
+  }
 }
 
 @media screen and (min-width: 1440px) {
-    @for $i from 1 through $cols {
-        .col-lg-#{$i} {
-            width: 8.3333% * $i;
-            max-width: 8.3333% * $i;
-            padding-left: 7.5px;
-            padding-right: 7.5px;
-        }
+  @for $i from 1 through $cols {
+    .col-lg-#{$i} {
+      width: 8.3333% * $i;
+      max-width: 8.3333% * $i;
+      padding-left: 7.5px;
+      padding-right: 7.5px;
     }
+  }
 }

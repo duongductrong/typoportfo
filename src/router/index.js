@@ -30,8 +30,14 @@ router.beforeEach((to, from, next) => {
   store.dispatch(SET_PRELOADER, true);
 
   setTimeout(() => {
-    // preloader close and next 
+    // preloader close and next
     store.dispatch(SET_PRELOADER, false);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+
     return next();
   }, 1000);
 });

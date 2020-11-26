@@ -42,6 +42,24 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
 
+.amn-btt-transform {
+  animation: AmnBttTransform 500ms ease forwards;
+}
+
+.amn-btt-transform-reverse {
+  animation: AmnBttTransform 500ms ease forwards reverse;
+}
+
+@keyframes AmnBttTransform {
+  from {
+    transform: translate(-100px, -100px) rotate(15deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translate(0) rotate(0);
   }
 }

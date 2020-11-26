@@ -1,5 +1,5 @@
 <template>
-  <div class="tree-item">
+  <div ref="refTreeItem" class="tree-item">
     <h6 class="h6 mb-1rem date">{{ date ?? "" }}</h6>
     <template v-if="href !== null">
       <a class="item-link" :href="href" target="_blank"><h1 class="h4 mb-1rem title">{{ title ?? "" }}</h1></a>
@@ -25,6 +25,12 @@ export default {
       default: null
     }
   },
+
+  methods: {
+    focus() {
+      return this.$refs.refTreeItem;
+    }
+  }
 };
 </script>
 

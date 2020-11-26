@@ -180,7 +180,7 @@ export default {
       this.$refs.timelineOne.focus(),
       this.$refs.timelineTwo.focus(),
     ];
-    
+
     document.removeEventListener(
       "scroll",
       throttle(() => {
@@ -194,7 +194,7 @@ export default {
           }
         });
       }, 20)
-    )
+    );
   },
 };
 </script>
@@ -218,7 +218,7 @@ export default {
       font-size: 2.5rem;
       font-weight: 900;
     }
-    
+
     .amn {
       $items: 5;
       @for $i from 1 through $items {
@@ -248,7 +248,7 @@ export default {
         object-fit: cover;
         object-position: center;
       }
-      
+
       .online-point {
         width: 50px;
         height: 50px;
@@ -285,6 +285,41 @@ export default {
       display: inline-block;
       border-bottom: 1px dashed $amber;
       margin-bottom: 1rem;
+    }
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .section-first {
+    .left {
+      .first-line {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section-first {
+    margin-bottom: 10rem;
+  }
+}
+
+@media screen and (max-width: 1168px) {
+  .section-first {
+    flex-wrap: wrap;
+    text-align: center;
+
+    .left,
+    .right {
+      flex: 1 0 100%;
+    }
+
+    .left {
+      order: 2;
+    }
+    .right {
+      order: 1;
     }
   }
 }
