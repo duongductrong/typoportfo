@@ -202,6 +202,7 @@ export default {
   position: fixed;
   top: 10px;
   left: 20px;
+  z-index: 20;
   // transform: translateX(-50%);
 }
 .about {

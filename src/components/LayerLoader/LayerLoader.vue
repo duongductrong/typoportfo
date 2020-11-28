@@ -26,6 +26,7 @@ export default {
 // We have 1.5 second to loading and 1.5 second to hide
 // Inside loading we can custom before, after transition between 3 second
 .layer-loader {
+  z-index: 100;
   visibility: hidden;
   opacity: 1;
   background: $amber;

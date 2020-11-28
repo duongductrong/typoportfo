@@ -5,8 +5,15 @@
       type="checkbox"
       class="checkbox"
       v-bind:checked="themeLight"
+      v-on:change="changeTheme()"
     />
-    <label for="switch-theme" class="switcher" v-on:click="changeTheme()">
+    <label
+      for="switch-theme"
+      class="switcher"
+      :class="{
+        'bg-light': !themeLight,
+      }"
+    >
     </label>
   </div>
 </template>
@@ -37,6 +44,7 @@ export default {
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 1;
 }
 
 .checkbox {
@@ -45,7 +53,6 @@ export default {
 
 .checkbox:checked {
   ~ .switcher {
-    background: $coolGray;
     &::after {
       top: calc(100% - 18px) !important;
       background: $amber;
@@ -70,14 +77,13 @@ export default {
     border-radius: 50%;
     background: $amber;
     transition: all 300ms linear;
+    box-shadow: 0 0 2px $coolGray;
   }
 }
 
 .theme-light {
-  .checkbox:checked {
-    ~ .switcher {
-      background: $light;
-    }
+  .checkbox {
+    display: none;
   }
 
   .switcher {
