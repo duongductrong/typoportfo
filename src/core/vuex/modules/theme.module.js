@@ -9,11 +9,17 @@ export default {
   mutations: {
     [CHANGE_THEME](state, payload) {
       state.themeLight = payload;
+
+      if (state.themeLight) {
+        document.body.classList.add("theme-light");
+      } else {
+        document.body.classList.remove("theme-light");
+      }
     },
   },
   actions: {
     [SET_THEME_LIGHT]({ commit }, status) {
-      commit(status);
+      commit(CHANGE_THEME, status);
     },
   },
   getters: {},

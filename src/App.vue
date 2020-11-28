@@ -2,32 +2,16 @@
   <router-view />
 
   <layer-loader />
+
+  <switch-theme />
 </template>
 
 <script>
-import { computed } from "vue";
-import { useStore } from "vuex";
 import LayerLoader from "./components/LayerLoader/LayerLoader.vue";
+import SwitchTheme from "./components/SwitchTheme/SwitchTheme.vue";
 
 export default {
-  setup() {
-    const store = useStore();
-
-    return {
-      isLight: computed(() => store.state.themeModule.themeLight),
-    };
-  },
-  components: { LayerLoader },
-
-  mounted() {
-    if (this.isLight) {
-      // set theme light
-      document.body.classList.add("theme-light");
-    } else {
-      // un-set theme light
-      document.body.classList.remove("theme-light");
-    }
-  },
+  components: { LayerLoader, SwitchTheme },
 };
 </script>
 
