@@ -104,6 +104,8 @@
           <h1 class="h3 mb-1rem">Language</h1>
           <p class="expertise-item h5">JavaScript</p>
           <br />
+          <p class="expertise-item h5">Typescript</p>
+          <br/>
           <p class="expertise-item h5">Php</p>
           <br />
         </div>

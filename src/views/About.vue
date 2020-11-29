@@ -55,7 +55,7 @@
           href="https://hatangdothi.tqdesign.vn/"
           ref="Project2_2020"
         >
-          Xây dựng Giao diện Frontend cho TQDesing
+          Xây dựng Giao diện Frontend cho TQDesign
         </timeline-item>
 
         <timeline-item
@@ -64,7 +64,7 @@
           href="http://nguyenquang-thaibinh.com/"
           ref="Project3_2020"
         >
-          Xây dựng hệ thống website phả đồ các phàn từ Frontend đến Backend
+          Xây dựng hệ thống website phả đồ các phần từ Frontend đến Backend
         </timeline-item>
       </timeline-tree>
     </div>
